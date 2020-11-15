@@ -449,9 +449,10 @@ void musica(queue * electrinica, queue *regueton, queue *rap, queue *pop, queue 
     push(electrinica, "Will not look back", "Duke Dumont","Electronica",237);
     push(electrinica, "Ignite", "Zedd", "Electronica", 226);
     push(electrinica, "One Touch", "Jess Glynne & Jax Jones", "Electronica",208);
-    cout<<"https://www.youtube.com/watch?v=pCKDrDvaOKE"<<endl;
-    
-
+    push(electrinica, "Floating", "Grenda", "Electronica",221);
+    push(electrinica, "Sugar" , "Robin Schulz", "Electonica", 222);
+    push(electrinica, "Ocean Drive", "Duke Dumont","Electronica",207);
+    push(electrinica, "Kangaroo Court", "Capital Cities", "Electronica",207);
 
     //llenado de cola regueton
     push(regueton,"La Toxica", "Farruko","Regueton", 205);
@@ -462,11 +463,28 @@ void musica(queue * electrinica, queue *regueton, queue *rap, queue *pop, queue 
     //llenado de cola de rap
     push(rap,"Till I Collapse","Eminem","Rap",298);
     push(rap,"21 Questions ","50 Cent","Rap",258);
+    push(rap,"Gangsta is paradise","Coolio", "Rap", 256);
+    push(rap,"Last breath", "Future", "Rap", 236);
+    push(rap, "Groupie Love", "A$ap rocky", "Rap", 240);
+    push(rap, "When i grow up","NF", "Rap", 240);
+    push(rap, "HUMBLE", "Kendrick Lamar", "Rap",183);
+    push(rap, "See you again","Wiz Khalifa","Rap",238);
+    push(rap, "Young, wild and free","Snoop Dogg", "Rap",257);
+    push(rap, "Rap God ","Eminem","Rap",370);
 
 
     //llenado de cola de pop
     push(pop,"Counting Stars","One Republic", "Pop",283);
     push(pop, "Rude","MAGIC!", "Pop",225);
+    push(pop, "Angel of small", "Hozie", "Pop",219);
+    push(pop, "Congratulations", "Post Malone", "Pop" ,226);
+    push(pop, "Uptown Funk", "Mark Ronson", "Pop", 240);
+    push(pop, "Dance Monkey", "Tones and I", "Pop", 220);
+    push(pop, "Get Lucky", "Daft Punk", "Pop",232);
+    push(pop, "Wonder", "Shawn Mendes" ,"Pop",272);
+    push(pop, "How do you sleep" ,"Sam Smith" , "Pop",229);
+    push(pop, "Hotline Bling"  , "Drake", "Pop",296);
+    
 
     //llenado de cola de salsa
     push(salsa,"Conteo Regresivo", "Gilberto Santa Rosa","Salsa",267);
