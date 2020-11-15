@@ -445,6 +445,12 @@ void musica(queue * electrinica, queue *regueton, queue *rap, queue *pop, queue 
     //llenado de cola de electronica
     push(electrinica,"Wake me up", "Avicii", "Electronica", 277);
     push(electrinica, "Animals", "Martin Garrix","Electronica", 191);
+    push(electrinica, "Pushin", "Danny Avila", "Electronica", 149);
+    push(electrinica, "Will not look back", "Duke Dumont","Electronica",237);
+    push(electrinica, "Ignite", "Zedd", "Electronica", 226);
+    push(electrinica, "One Touch", "Jess Glynne & Jax Jones", "Electronica",208);
+    cout<<"https://www.youtube.com/watch?v=pCKDrDvaOKE"<<endl;
+    
 
 
     //llenado de cola regueton
