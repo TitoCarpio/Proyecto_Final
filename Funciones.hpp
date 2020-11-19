@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <stack>
 
 using namespace std;
 
@@ -8,7 +9,6 @@ struct Node {
     string titulo;
     string cantante;
     string genero;
-    int duracion;
     struct Node *next;
 };
 typedef struct Node node;
@@ -29,6 +29,8 @@ struct Sesion{
 };
 typedef struct Sesion registro;
 
+stack<string> gener;
+
 // Inicializa mi cola.
 void initialize(queue *q) {
     q->front = NULL;
@@ -41,13 +43,12 @@ bool empty(queue *q) {
 }
 
 // Ingresa un elemennto a la cola.
-void push(queue *q, string nombre, string autor, string genero,int tiempo) {
+void push(queue *q, string nombre, string autor, string genero){
     node *newNode;
     newNode = new node;
     newNode->titulo = nombre;
     newNode->cantante = autor;
     newNode->genero = genero;
-    newNode->duracion = tiempo;
     newNode->next = NULL;
 
     if(q->back == NULL) {
@@ -61,6 +62,7 @@ void push(queue *q, string nombre, string autor, string genero,int tiempo) {
 
 // Elimina un elemento de la cola.
 void pop(queue *q) {
+
     if(empty(q)) {
         cout << "Underflow" << endl;
         return;
@@ -76,29 +78,114 @@ void pop(queue *q) {
 }
 
 // Funcion que imprime los elementos de la cola.
-void showQueue(queue *q) {
+void showQueue(queue *q, string g) {
     if(empty(q)) {
         cout << "\t\t\t\t\t\t\tLa cola esta vacia" << endl;
     }else {
         node *aux = q->front;
         while(aux) {
-            cout << "\t\t\t\t\t\t\t[ "<<aux->titulo << " "<<aux->cantante<<" "<<aux->genero<<" "<<aux->duracion<<" "<<" ]";
-            cout<<endl;
+            if(aux->genero == g){
+                cout << "\t\t\t\t\t\t\t[ "<<aux->titulo << ", "<<aux->cantante<<", "<<aux->genero<<" ]";
+                cout<<endl;
+            }
             aux = aux->next;
         }
+        cout<< "\t\t\t\t\t\t\t......\n";
     }
 }
 
 //funcion que elimina un elemento de la cola
-void eliminar(queue *s){
-    if(empty(s)){
-        
+void eliminar(queue *s, string g){
+    // La funcion se ha cambiado para vaciar todas las canciones de un solo genero con un string
+    // y de paso solo guarda las canciones de otros generos que no se deben borrar
+    queue aux ;
+    initialize(&aux);
+    while(!empty(s)){
+        if(s->front->genero == g){
+            pop(s);
+        }else{
+            node* ayuda = s->front;
+            string titu = ayuda->titulo, artista = ayuda->cantante, gen = ayuda->genero;
+            push(&aux, titu, artista, gen);
+            pop(s);
+        }
+    }
+    while(!empty(&aux)){
+        node* ayuda2 =  aux.front;
+        string titu = ayuda2->titulo, artista = ayuda2->cantante, gen = ayuda2->genero;
+        push(s, titu, artista, gen);
+        pop(&aux);
+    }
+    /*if(empty(s)){
         return;
     }else{
-        pop(s);
-        eliminar(s);
+        if(s->front->genero == g){
+            pop(s);
+            eliminar(s, g);
+        }else{
+            node *ayuda = s->front;
+            pop(s);
+            eliminar(s, g);
+            string titu = ayuda->titulo, artista = ayuda->cantante, gen = ayuda->genero;
+            int tiemp = ayuda->duracion;
+            push(s, titu, artista, gen, tiemp);
+        }
+        return;
+    }*/
+}
+
+// FUNCIONES CON PILAS, USANDO LIBRERIA STACK.
+int MostrarGeneros(){ // Funcion que usa PILAS para mostrar los generos que tenga el usuario.
+    stack<string> Aux = gener;
+    int n=1;
+    while(!Aux.empty()){
+        string nombre = Aux.top();
+        cout << "\t\t\t\t\t\t\t" << n << ". " << nombre << "\n";
+        Aux.pop();
+        n++;
     }
-    
+    return n;
+}
+
+void AgregarCancion(int opcion, queue *s){// funcion para agregar una cancion a cola
+    stack<string> Aux = gener;
+    for(int i=1; i < opcion; i++){
+        Aux.pop();
+    }
+    string g = Aux.top(), titulo, cantante;
+    int duracion=0;
+    cout<<"\t\t\t\t\t\t\tTitulo: ";
+    getline(cin,titulo);                 
+    cout<<"\t\t\t\t\t\t\tCantante: ";
+    getline(cin,cantante);
+
+    push(s,titulo,cantante,g);
+}
+
+void EliminarCancion(int opcion, queue *s){// funcion para eliminar una cancion de cola
+    stack<string> Aux = gener;
+    queue aux ;
+    initialize(&aux);
+    for(int i=1; i<opcion; i++){
+        Aux.pop();
+    }
+    string g = Aux.top();
+    while(!empty(s)){
+        if(s->front->genero == g){
+            pop(s);
+            break;
+        }
+        node* ayuda = s->front;
+        string titu = ayuda->titulo, artista = ayuda->cantante, gen = ayuda->genero;
+        push(&aux, titu, artista, gen);
+        pop(s);
+    }
+    while(!empty(&aux)){
+        node* ayuda2 =  aux.front;
+        string titu = ayuda2->titulo, artista = ayuda2->cantante, gen = ayuda2->genero;
+        push(s, titu, artista, gen);
+        pop(&aux);
+    }
 }
 
 //solicitud de datos del usuario para inicio de sesion
@@ -171,10 +258,10 @@ void terminosycondiciones( bool * terminos){
 }
 
 //menu de usurio.
-void menu(queue *electronica, queue *regueton, queue *rap, queue *Pop,queue *salsa, queue *descargas) {
+void menu(queue *canciones){
 
     string titulo,cantante, genero;
-    int optionMenu=0, optionCola=0, duracion=0;
+    int optionMenu=0, optionCola=0, duracion=0, maximo=0;
     bool status = true;
     node *newFeliz;
 
@@ -199,12 +286,13 @@ void menu(queue *electronica, queue *regueton, queue *rap, queue *Pop,queue *sal
     
 
         cout << "\n" << "\t\t\t\t\t\t\t\t******* MENU DE USUARIO *******" << endl<<endl;
-        cout << "\t\t\t\t\t\t\t1. Ingresar cancion a cola de reproduccion" << endl;
-        cout << "\t\t\t\t\t\t\t2. Eliminar  cancion de la cola" << endl;
-        cout << "\t\t\t\t\t\t\t3. Vaciar cola de reproduccion" << endl;
-        cout << "\t\t\t\t\t\t\t4. Mostrar cola de reproduccion" << endl;
-        cout << "\t\t\t\t\t\t\t5. Agregar cancion a descargar" << endl;
-        cout << "\t\t\t\t\t\t\t6. Salir del menu" << endl;
+        cout << "\t\t\t\t\t\t\t1. Agregar otra cola de reproduccion" << endl;
+        cout << "\t\t\t\t\t\t\t2. Ingresar cancion a cola de reproduccion" << endl;
+        cout << "\t\t\t\t\t\t\t3. Eliminar  cancion de la cola" << endl;
+        cout << "\t\t\t\t\t\t\t4. Vaciar cola de reproduccion" << endl;
+        cout << "\t\t\t\t\t\t\t5. Mostrar cola de reproduccion" << endl;
+        cout << "\t\t\t\t\t\t\t6. Agregar cancion a descargar" << endl;
+        cout << "\t\t\t\t\t\t\t7. Salir del menu" << endl;
         cout<<"\t\t\t\t\t\t_________________________________________________________"<<endl;
         cout << "\n" << "\t\t\t\t\t\t\tIngrese la opcion que deseas ejectuar: ";
         cin >> optionMenu;
@@ -214,201 +302,80 @@ void menu(queue *electronica, queue *regueton, queue *rap, queue *Pop,queue *sal
         switch (optionMenu) {
            
             case 1:
+                cout<<"\t\t\t\t\t\t\tGenero de la cola a crear: ";
+                getline(cin, genero);
+                gener.push(genero);
+                break;
+            case 2:
                 cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
-                cout<<"\t\t\t\t\t\t\t1. Electronica"<<endl;
-                cout<<"\t\t\t\t\t\t\t2. Regueton"<<endl;
-                cout<<"\t\t\t\t\t\t\t3. Rap"<<endl;
-                cout<<"\t\t\t\t\t\t\t4. Pop"<<endl;
-                cout<<"\t\t\t\t\t\t\t5. Salsa"<<endl;
+                maximo = MostrarGeneros();
                 cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
                 cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola a la que se le agregara: ";
                 cin>>optionCola;
                 cin.ignore();
-
-                    if (optionCola == 1){
-                        cout<<"Titulo: ";
-                        getline(cin,titulo);
-                        
-                        cout<<"Cantante: ";
-                        getline(cin,cantante);
-
-                        cout<<"Genero: ";
-                        getline(cin, genero );
-
-                        cout<<"Duracion: ";
-                        cin>>duracion;
-                        cin.ignore();
-
-                        push(electronica,titulo,cantante,genero,duracion);
-
-
-
-                    }else if (optionCola == 2){
-                        cout<<"Titulo: ";
-                        getline(cin,titulo);
-                        
-                        cout<<"Cantante: ";
-                        getline(cin,cantante);
-
-                        cout<<"Genero: ";
-                        getline(cin, genero );
-
-                        cout<<"Duracion: ";
-                        cin>>duracion;
-                        cin.ignore();
-
-                        push(regueton,titulo,cantante,genero,duracion);
-
-                    }else if (optionCola == 3){
-                        cout<<"Titulo: ";
-                        getline(cin,titulo);
-                        
-                        cout<<"Cantante: ";
-                        getline(cin,cantante);
-
-                        cout<<"Genero: ";
-                        getline(cin, genero );
-
-                        cout<<"Duracion: ";
-                        cin>>duracion;
-                        cin.ignore();
-
-                        push(rap,titulo,cantante,genero,duracion);
-
-                    }else if (optionCola == 4)
-                    {
-                        cout<<"Titulo: ";
-                        getline(cin,titulo);
-                        
-                        cout<<"Cantante: ";
-                        getline(cin,cantante);
-
-                        cout<<"Genero: ";
-                        getline(cin, genero );
-
-                        cout<<"Duracion: ";
-                        cin>>duracion;
-                        cin.ignore();
-
-                        push(Pop,titulo,cantante,genero,duracion);
-                    }else if (optionCola == 4)
-                    {
-                        cout<<"Titulo: ";
-                        getline(cin,titulo);
-                        
-                        cout<<"Cantante: ";
-                        getline(cin,cantante);
-
-                        cout<<"Genero: ";
-                        getline(cin, genero );
-
-                        cout<<"Duracion: ";
-                        cin>>duracion;
-                        cin.ignore();
-
-                        push(salsa,titulo,cantante,genero,duracion);
-                    }else
-                    {
+                    if (optionCola>=1 && optionCola<maximo){
+                        AgregarCancion(optionCola, canciones);
+                    }else{
                         cout<<"Opcion incorrecta, intente de nuevo"<<endl;
                     }
-              
-               
-                break;
-
-            case 2:
-                cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
-                cout<<"\t\t\t\t\t\t\t1. Electronica"<<endl;
-                cout<<"\t\t\t\t\t\t\t2. Regueton"<<endl;
-                cout<<"\t\t\t\t\t\t\t3. Rap"<<endl;
-                cout<<"\t\t\t\t\t\t\t4. Pop"<<endl;
-                cout<<"\t\t\t\t\t\t\t5. Salsa"<<endl;
-                cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
-                cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola a la que se eliminara la cancion: ";
-                cin>>optionCola;
-                cin.ignore();
-
-                if(optionCola == 1){
-                    pop(electronica);
-                }else if(optionCola == 2){
-                    pop(regueton);
-                }else if(optionCola == 3){
-                    pop(rap);
-                }else if (optionCola == 4)
-                {
-                    pop(Pop);
-                }else if (optionCola == 5)
-                {
-                    pop(salsa);
-                }else
-                {
-                     cout<<"Opcion invalida, intente de nuevo"<<endl;
-                }
-                
                 break;
 
             case 3:
                 cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
-                cout<<"\t\t\t\t\t\t\t1. Electronica"<<endl;
-                cout<<"\t\t\t\t\t\t\t2. Regueton"<<endl;
-                cout<<"\t\t\t\t\t\t\t3. Rap"<<endl;
-                cout<<"\t\t\t\t\t\t\t4. Pop"<<endl;
-                cout<<"\t\t\t\t\t\t\t5. Salsa"<<endl;
+                maximo = MostrarGeneros();
+                cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
+                cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola a la que se eliminara la cancion: ";
+                cin>>optionCola;
+                
+                if (optionCola >= 1 && optionCola < maximo){
+                    EliminarCancion(optionCola, canciones);
+                }else
+                {
+                    cout<<"Opcion invalida, intente de nuevo"<<endl;
+                }
+                
+                break;
+
+            case 4:
+                cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
+                maximo = MostrarGeneros();
                 cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
                 cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola que se vaciar: ";
                 cin>>optionCola;
-                cin.ignore();
 
-                if(optionCola == 1){
-                    eliminar(electronica);
-                }else if(optionCola == 2){
-                    eliminar(regueton);
-                }else if(optionCola == 3){
-                    eliminar(rap);
-                }else if (optionCola == 4)
-                {
-                    eliminar(Pop);
-                }else if (optionCola == 5)
-                {
-                    eliminar(salsa);
                 
+                if (optionCola >= 1 && optionCola < maximo){
+                    stack<string> Aux = gener;
+                    for(int i=1; i< optionCola; i++){
+                        Aux.pop();
+                    }
+                    string g = Aux.top();
+                    eliminar(canciones, g);
                 }else{
                     cout<<"Opcion invalida intente de nuevo"<<endl;
                 }
                 
                 break;
-            case 4:
+            case 5:
                 cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
-                cout<<"\t\t\t\t\t\t\t1. Electronica"<<endl;
-                cout<<"\t\t\t\t\t\t\t2. Regueton"<<endl;
-                cout<<"\t\t\t\t\t\t\t3. Rap"<<endl;
-                cout<<"\t\t\t\t\t\t\t4. Pop"<<endl;
-                cout<<"\t\t\t\t\t\t\t5. Salsa"<<endl;
+                maximo =MostrarGeneros();
                 cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
                 cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola que desea visualizar: ";
                 cin>>optionCola;
-                cin.ignore();
-
-                if(optionCola == 1){
-                    showQueue(electronica);
-                }else if(optionCola == 2){
-                    showQueue(regueton);
-                }else if(optionCola == 3){
-                    showQueue(rap);
-                }else if (optionCola == 4)
-                {
-                    showQueue(Pop);
-                }else if (optionCola == 5)
-                {
-                    showQueue(salsa);
                 
+                if (optionCola >= 1 && optionCola < maximo){
+                    stack<string> aux = gener;
+                    for(int i=1; i<optionCola; i++){
+                        aux.pop();
+                    }
+                    string g = aux.top();
+                    showQueue(canciones, g);
                 }else{
                     cout<<"Opcion invalida intente de nuevo"<<endl;
                 }
-
                 break;
-
-            case 5:
-            cout << "\t\t\t\t\t\t\tIngrese los datos de la cancion a descargar: "<<endl;
+            case 6:
+                cout<<"\t\t\t\t\t\t\tIngrese los datos de la cancion a descargar: "<<endl;
                 cout<<"\t\t\t\t\t\t\tTitulo: ";
                 getline(cin,titulo);
                         
@@ -418,82 +385,71 @@ void menu(queue *electronica, queue *regueton, queue *rap, queue *Pop,queue *sal
                 cout<<"\t\t\t\t\t\t\tGenero: ";
                 getline(cin, genero );
 
-                cout<<"\t\t\t\t\t\t\tDuracion: ";
-                cin>>duracion;
-                cin.ignore();
-
-                push(descargas,titulo,cantante,genero,duracion);
-                
+                push(canciones,titulo,cantante,genero);
                 break;
-
-            
-            case  6:
+            case  7:
                 status = false;
                 break;
-
-
             default:
-                cout<<"Opcion invalida, intente nuevamente."<<endl;
-               
+                cout<<"Opcion invalida, intente nuevamente."<<endl;               
                 break;
         }
     } 
 }
 
-void musica(queue * electrinica, queue *regueton, queue *rap, queue *pop, queue *salsa){
+void musica(queue * canciones){
     
     //llenado de cola de electronica
-    push(electrinica,"Wake me up", "Avicii", "Electronica", 277);
-    push(electrinica, "Animals", "Martin Garrix","Electronica", 191);
-    push(electrinica, "Pushin", "Danny Avila", "Electronica", 149);
-    push(electrinica, "Will not look back", "Duke Dumont","Electronica",237);
-    push(electrinica, "Ignite", "Zedd", "Electronica", 226);
-    push(electrinica, "One Touch", "Jess Glynne & Jax Jones", "Electronica",208);
-    push(electrinica, "Floating", "Grenda", "Electronica",221);
-    push(electrinica, "Sugar" , "Robin Schulz", "Electonica", 222);
-    push(electrinica, "Ocean Drive", "Duke Dumont","Electronica",207);
-    push(electrinica, "Kangaroo Court", "Capital Cities", "Electronica",207);
+    gener.push("electronica");
+    push(canciones,"Wake me up", "Avicii", "electronica");
+    push(canciones, "Animals", "Martin Garrix","electronica");
+    push(canciones, "Pushin", "Danny Avila", "electronica");
+    push(canciones, "Will not look back", "Duke Dumont","electronica");
+    push(canciones, "Ignite", "Zedd", "electronica");
+    push(canciones, "One Touch", "Jess Glynne & Jax Jones", "electronica");
+    push(canciones, "Floating", "Grenda", "electronica");
+    push(canciones, "Sugar" , "Robin Schulz", "electonica");
+    push(canciones, "Ocean Drive", "Duke Dumont","electronica");
+    push(canciones, "Kangaroo Court", "Capital Cities", "electronica");
 
     //llenado de cola regueton
-    push(regueton,"La Toxica", "Farruko","Regueton", 205);
-    push(regueton,"Bellaquita", "Dalex","Regueton",208);
-    push(regueton, "Con Calma","Daddy Yankee", "Regueton", 201);
-    push(regueton,"Caramelo", "Ozuna","Regueton",242);
-    push(regueton, "Dakiti","Bad Bunny","Regueton",204);
-    push(regueton,"Agua","J Balvin", "Regueton", 177);
-    push(regueton,"La curiosidad","Jay Wheeler","Regeueton", 208);
+    gener.push("regueton");
+    push(canciones,"La Toxica", "Farruko","regueton");
+    push(canciones,"Bellaquita", "Dalex","regueton");
 
 
 
-    //llenado de cola de rap
-    push(rap,"Till I Collapse","Eminem","Rap",298);
-    push(rap,"21 Questions ","50 Cent","Rap",258);
-    push(rap,"Gangsta is paradise","Coolio", "Rap", 256);
-    push(rap,"Last breath", "Future", "Rap", 236);
-    push(rap, "Groupie Love", "A$ap rocky", "Rap", 240);
-    push(rap, "When i grow up","NF", "Rap", 240);
-    push(rap, "HUMBLE", "Kendrick Lamar", "Rap",183);
-    push(rap, "See you again","Wiz Khalifa","Rap",238);
-    push(rap, "Young, wild and free","Snoop Dogg", "Rap",257);
-    push(rap, "Rap God ","Eminem","Rap",370);
+    //llenado de cola de canciones
+    gener.push("rap");
+    push(canciones,"Till I Collapse","Eminem","rap");
+    push(canciones,"21 Questions ","50 Cent","rap");
+    push(canciones,"Gangsta is paradise","Coolio", "rap");
+    push(canciones,"Last breath", "Future", "rap");
+    push(canciones, "Groupie Love", "A$ap rocky", "rap");
+    push(canciones, "When i grow up","NF", "rap");
+    push(canciones, "HUMBLE", "Kendrick Lamar", "rap");
+    push(canciones, "See you again","Wiz Khalifa","rap");
+    push(canciones, "Young, wild and free","Snoop Dogg", "rap");
+    push(canciones, "canciones God ","Eminem","rap");
 
 
-    //llenado de cola de pop
-    push(pop,"Counting Stars","One Republic", "Pop",283);
-    push(pop, "Rude","MAGIC!", "Pop",225);
-    push(pop, "Angel of small", "Hozie", "Pop",219);
-    push(pop, "Congratulations", "Post Malone", "Pop" ,226);
-    push(pop, "Uptown Funk", "Mark Ronson", "Pop", 240);
-    push(pop, "Dance Monkey", "Tones and I", "Pop", 220);
-    push(pop, "Get Lucky", "Daft Punk", "Pop",232);
-    push(pop, "Wonder", "Shawn Mendes" ,"Pop",272);
-    push(pop, "How do you sleep" ,"Sam Smith" , "Pop",229);
-    push(pop, "Hotline Bling"  , "Drake", "Pop",296);
-    
+    //llenado de cola de canciones
+    gener.push("pop");
+    push(canciones,"Counting Stars","One Republic", "pop");
+    push(canciones, "Rude","MAGIC!", "pop");
+    push(canciones, "Angel of small", "Hozie", "pop");
+    push(canciones, "Congratulations", "Post Malone", "pop");
+    push(canciones, "Uptown Funk", "Mark Ronson", "pop");
+    push(canciones, "Dance Monkey", "Tones and I", "pop");
+    push(canciones, "Get Lucky", "Daft Punk", "pop");
+    push(canciones, "Wonder", "Shawn Mendes" ,"pop");
+    push(canciones, "How do you sleep" ,"Sam Smith" , "pop");
+    push(canciones, "Hotline Bling"  , "Drake", "pop");
 
     //llenado de cola de salsa
-    push(salsa,"Conteo Regresivo", "Gilberto Santa Rosa","Salsa",267);
-    push(salsa,"Valio la pena","Marc Anthony","Salsa",293);
+    gener.push("salsa");
+    push(canciones,"Conteo Regresivo", "Gilberto Santa Rosa","salsa");
+    push(canciones,"Valio la pena","Marc Anthony","salsa");
 
 }
 
