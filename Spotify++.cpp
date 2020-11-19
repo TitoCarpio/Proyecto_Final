@@ -1,39 +1,30 @@
 #include <iostream>
+#include <windows.h>
 #include <conio.h>
 #include <string.h>
 #include "Funciones.hpp"
 
 using namespace std;
 
-void menu(queue *,queue *,queue *,queue *);
 
 int main(){
 
-    queue electronica, regueton, rap, pop, salsa, descargas;
+    queue canciones;
     registro sesion;
     bool terminos = false;
-    initialize(&electronica);
-    initialize(&rap);
-    initialize(&regueton);
-    initialize(&pop);
-    initialize(&salsa);
-    initialize(&descargas);
+    initialize(&canciones);
 
     inicio(&sesion);
     
     terminosycondiciones(&terminos);
-    musica(&electronica,&regueton,&rap,&pop,&salsa);
+    musica(&canciones);
 
     if (terminos == true)
     {
-        menu(&electronica,&regueton,&rap,&pop,&salsa,&descargas);
+        menu(&canciones);
     }
     
-
-    
-
-
-    getch();
+    Sleep(100);
     return 0;
 }
 
