@@ -457,6 +457,11 @@ void musica(queue * electrinica, queue *regueton, queue *rap, queue *pop, queue 
     //llenado de cola regueton
     push(regueton,"La Toxica", "Farruko","Regueton", 205);
     push(regueton,"Bellaquita", "Dalex","Regueton",208);
+    push(regueton, "Con Calma","Daddy Yankee", "Regueton", 201);
+    push(regueton,"Caramelo", "Ozuna","Regueton",242);
+    push(regueton, "Dakiti","Bad Bunny","Regueton",204);
+    push(regueton,"Agua","J Balvin", "Regueton", 177);
+    push(regueton,"La curiosidad","Jay Wheeler","Regeueton", 208);
 
 
 
