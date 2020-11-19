@@ -188,6 +188,24 @@ void EliminarCancion(int opcion, queue *s){// funcion para eliminar una cancion 
     }
 }
 
+void eliminarCola(int opcion){
+    stack<string> aux;
+    int i=1;
+    while(!gener.empty() && i<opcion){
+        string genero = gener.top();
+        aux.push(genero);
+        gener.pop();
+        i++;
+    }
+    gener.pop();
+    while(!aux.empty()){
+        string genero = aux.top();
+        gener.push(genero);
+        aux.pop();
+    }
+    cout <<"\t\t\t\t\t\t\tCola eliminada con exito..."<<endl;
+}
+
 //solicitud de datos del usuario para inicio de sesion
 void inicio (registro *sesion){
     
@@ -286,7 +304,7 @@ void menu(queue *canciones){
     
 
         cout << "\n" << "\t\t\t\t\t\t\t\t******* MENU DE USUARIO *******" << endl<<endl;
-        cout << "\t\t\t\t\t\t\t1. Agregar otra cola de reproduccion" << endl;
+        cout << "\t\t\t\t\t\t\t1. Opciones de cola" << endl;
         cout << "\t\t\t\t\t\t\t2. Ingresar cancion a cola de reproduccion" << endl;
         cout << "\t\t\t\t\t\t\t3. Eliminar  cancion de la cola" << endl;
         cout << "\t\t\t\t\t\t\t4. Vaciar cola de reproduccion" << endl;
@@ -302,9 +320,28 @@ void menu(queue *canciones){
         switch (optionMenu) {
            
             case 1:
-                cout<<"\t\t\t\t\t\t\tGenero de la cola a crear: ";
-                getline(cin, genero);
-                gener.push(genero);
+                cout << "\t\t\t\t\t\t\t1. Agregar una cola de reproduccion" << endl;
+                cout << "\t\t\t\t\t\t\t2. Eliminar una cola de reproduccion" << endl;
+                cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
+                cout<<"\t\t\t\t\t\t\tIngrese el numero de la opcion que desea ejecutar: ";
+                cin >> optionCola; 
+                cin.ignore();
+                if(optionCola == 1){
+                    cout<<"\n" << "\t\t\t\t\t\t\tGenero de la cola a crear: ";
+                    getline(cin, genero);
+                    gener.push(genero);
+                }else if(optionCola == 2){
+                    cout<<"\n" << "\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
+                    maximo = MostrarGeneros();
+                    cout<<"\t\t\t\t\t\t\t_____________________________________________________"<<endl;
+                    cout<<"\t\t\t\t\t\t\tIngrese el numero de la cola a la que eliminara: ";
+                    cin >> optionCola;
+                    if(optionCola >= 1 && optionCola<maximo){
+                        eliminarCola(optionCola);
+                    }
+                }else{
+                    cout<<"Opcion Invalida, vuelva a intentarlo"<<endl;
+                }
                 break;
             case 2:
                 cout<<"\t\t\t\t\t\t\tColas de reproduccion disponible: "<<endl;
