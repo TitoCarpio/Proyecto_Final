@@ -462,11 +462,11 @@ void musica(queue * canciones){
     gener.push("regueton");
     push(canciones,"La Toxica", "Farruko","regueton");
     push(canciones,"Bellaquita", "Dalex","regueton");
-    push(regueton, "Con Calma","Daddy Yankee", "Regueton", 201);
-    push(regueton,"Caramelo", "Ozuna","Regueton",242);
-    push(regueton, "Dakiti","Bad Bunny","Regueton",204);
-    push(regueton,"Agua","J Balvin", "Regueton", 177);
-    push(regueton,"La curiosidad","Jay Wheeler","Regeueton", 208);
+    push(canciones, "Con Calma","Daddy Yankee", "Regueton");
+    push(canciones,"Caramelo", "Ozuna","Regueton");
+    push(canciones, "Dakiti","Bad Bunny","Regueton");
+    push(canciones,"Agua","J Balvin", "Regueton");
+    push(canciones,"La curiosidad","Jay Wheeler","Regeueton");
 
 
 
@@ -504,7 +504,7 @@ void musica(queue * canciones){
 
 }
 void logito(){
-  cout<<" \t\t\t\t\t\t\t_____________________________"<<endl;
+  cout<<" \t\t\t\t\t\t\t _____________________________"<<endl;
   cout<<"\t\t\t\t\t\t\t _____________________________"<<endl;
   cout<<"\t\t\t\t\t\t\t||          **                ||"<<endl;
   cout<<"\t\t\t\t\t\t\t||          *  *              ||"<<endl;
@@ -525,6 +525,7 @@ void letras(){
   cout<<"\t\t\t\t\t\t\t3. Rap"<<endl;
   cout<<"\t\t\t\t\t\t\t4. Pop"<<endl;
   cout<<"\t\t\t\t\t\t\t5. Salsa"<<endl;
+  cout<<"\t\t\t\t\t\t\tIngrese la opcion a elegir: ";
   cin>>opcion;
   if(opcion==1)
   {
@@ -535,122 +536,123 @@ void letras(){
     cout<<"\t\t\t\t\t\t\t5] Ignite                Zedd"<<endl;          cout<<"\t\t\t\t\t\t\t6] One Touch             Jess Glynne & Jax Jones"<<endl;
     cout<<"\t\t\t\t\t\t\t7] Pressure              Grenda"<<endl;        cout<<"\t\t\t\t\t\t\t8] Sugar                 Robin Schulz"<<endl;
     cout<<"\t\t\t\t\t\t\t9] Ocean Drive           Duke Dumont"<<endl;   cout<<"\t\t\t\t\t\t\t10]Kangaroo Court        Capital Cities"<<endl; cout<<endl<<endl;
-    cout<<"\t\t\t\t\t\t\tEscoger unas de las canciones de su interes"<<endl;
+    cout<<"\t\t\t\t\t\t\tEscoger unas de las canciones de su interes";
     cin>>opcion2;
     switch(opcion2)
     {
       case 1:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=SsYXnH9lzCY"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=SsYXnH9lzCY"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  Wake me up \nArtista:Avicci \nPublicacion:2013 \nDimension:5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  Wake me up"<<endl;cout<<"\t\t\t\t\t\t\tArtista:Avicci"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2013"<<endl;cout<<"\t\t\t\t\t\t\tDimension:5Mb"<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 2:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=3_aqe6CNa8w"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=3_aqe6CNa8w"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  Animals \nArtista:Martin Garrix \nPublicacion:2013 \nDimension:5.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  Animals"<<endl;cout<<"\t\t\t\t\t\t\tArtista:Martin Garrix"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2013"<<endl;cout<<"\t\t\t\t\t\t\tDimension:5.5Mb"<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 3:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=l83hc5mYZQY"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=l83hc5mYZQY"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  Pushing \nArtista:Danny Avila \nPublicacion:2020 \nDimension:7.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  Pushing"<<endl;cout<<"\t\t\t\t\t\t\tArtista:Danny Avila"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020"<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb"<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 4:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl;cout<<"Escoger unas de las opciones:"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones:"<<endl; cin>>seleccion;
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=Z6I4Kc84MRs"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=Z6I4Kc84MRs"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Will not look back  \nArtista: Duke Dumont  \nPublicacion:2014 \nDimension:4.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Will not look back"<<endl; cout<<"\t\t\t\t\t\t\tArtista: Duke Dumont"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2014"<<endl;cout<<"\t\t\t\t\t\t\tDimension:4.5Mb \nGenero:Electronica "<<endl;
       }
       break;
       case 5:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; 
-      cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; 
+      cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=7GY7RyFINsA"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=7GY7RyFINsA"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Ignite  \nArtista:Zedd  \nPublicacion:2016 \nDimension:6.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Ignite"<<endl;cout<<"\t\t\t\t\t\t\tArtista:Zedd "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2016 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 6:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=YiDeezkO7m8"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=YiDeezkO7m8"<<endl;
        
       }
       else{
-        cout<<"Nombre de la cancion:One Touch \nArtista: Jess Glynne & Jax Jones \nPublicacion:2019 \nDimension:6.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:One Touch"<<endl;cout<<"\t\t\t\t\t\t\tArtista: Jess Glynne & Jax Jones "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 7:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=OuN03__MjkE"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=OuN03__MjkE"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Pressure \nArtista:Grenda  \nPublicacion:2018 \nDimension:6.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Pressure "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Grenda  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2018 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 8:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=AY0W3bGGC1o"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=AY0W3bGGC1o"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Sugar \nArtista:Robin Shculz  \nPublicacion:2017 \nDimension:6.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Sugar "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Robin Shculz  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2017 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 9:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=7CdEfL-XrSk"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=7CdEfL-XrSk"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Sugar \nArtista:Robin Shculz  \nPublicacion:2017 \nDimension:6.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Sugar"<<endl;cout<<"\t\t\t\t\t\t\tArtista:Robin Shculz  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2017 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       case 10:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
         if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=bR-QyB-YpWs"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=bR-QyB-YpWs"<<endl;
         }
         else{
-        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Kangaroo Court  \nArtista:Capital Cities \nPublicacion:2012 \nDimension:9.5Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Kangaroo Court "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Capital Cities "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2012 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:9.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
         }
       break;
       default:
-      cout<<"Opcion no valida "<<endl;
+      cout<<endl<<endl;
+      cout<<"\t\t\t\t\t\t\tOpcion no valida "<<endl;
       break;
     }
   }else if(opcion==2)
@@ -660,89 +662,90 @@ void letras(){
     cout<<"\t\t\t\t\t\t\t3]Con Calma            Daddy Yankee"<<endl;    cout<<"\t\t\t\t\t\t\t4]Dakiti               Bad Bunny"<<endl;
     cout<<"\t\t\t\t\t\t\t5]Agua                 J Balvin"<<endl;        cout<<"\t\t\t\t\t\t\t6]La curiosidad        Jay Wheeler"<<endl;
     cout<<"\t\t\t\t\t\t\t7]Caramelo             Ozuna"<<endl;
-    cout<<"\t\t\t\t\t\t\tSeleccionar una cancion que desee:"<<endl; cin>>opcion2;
+    cout<<"\t\t\t\t\t\t\tSeleccionar una cancion que desee:"; cin>>opcion2;
     switch(opcion2)
     {
       case 1:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=amiBCue4l24"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=amiBCue4l24"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  La Toxica \nArtista:Farruko\nPublicacion:2020 \nDimension:2Mb \nGenero:Regueton "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  La Toxica "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Farruko"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:2Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Regueton "<<endl;
       }
       break;
       case 2:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=g-VuXtNJLYI"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=g-VuXtNJLYI"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  Bellaquita \nArtista:Dalex \nPublicacion:2019 \nDimension:2.5Mb \nGenero:Regueton "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  Bellaquita "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Dalex "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:2.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Regueton "<<endl;
       }
       break;
       case 3:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=bNTRIdraX8c"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=bNTRIdraX8c"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Con calma \nArtista:Daddy Yankee \nPublicacion:2019 \nDimension:2.5Mb \nGenero:Reguenton "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Con calma "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Daddy Yankee "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:2.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Reguenton "<<endl;
       }
       break;
       case 4:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl;cout<<"Escoger unas de las opciones:"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones:"; cin>>seleccion;
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=WsUFhSDKYPI"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=WsUFhSDKYPI"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Dakiti  \nArtista: Bad Bunny  \nPublicacion:2020 \nDimension:1.5Mb \nGenero:Reguenton"<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Dakiti  "<<endl;cout<<"\t\t\t\t\t\t\tArtista: Bad Bunny  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:1.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Reguenton"<<endl;
       }
       break;
       case 5:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; 
-      cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; 
+      cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=-dHaDByOqFg"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=-dHaDByOqFg"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Agua  \nArtista:J Balvin \nPublicacion:2020 \nDimension:2.5Mb \nGenero:Reguenton "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Agua  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:J Balvin "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:2.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Reguenton "<<endl;
       }
       break;
       case 6:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=gfMi-MEdWZU"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=gfMi-MEdWZU"<<endl;
        
       }
       else{
-        cout<<"Nombre de la cancion:La curiosidad \nArtista: Jay Wheeler \nPublicacion:2020 \nDimension:2.5Mb \nGenero:Reguenton "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:La curiosidad "<<endl;cout<<"\t\t\t\t\t\t\tArtista: Jay Wheeler "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:2.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Reguenton "<<endl;
       }
       break;
       case 7:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=wynf-I-k8es"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=wynf-I-k8es"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Caramelo \nArtista:Ozuna  \nPublicacion:2020 \nDimension:1.1Mb \nGenero:Electronica "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Caramelo "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Ozuna  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2020 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:1.1Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Electronica "<<endl;
       }
       break;
       default:
-      cout<<"Opcion no valida "<<endl;
+      cout<<endl<<endl;
+      cout<<"\t\t\t\t\t\t\tOpcion no valida "<<endl;
       break;
     }
   }else if(opcion==3)
@@ -755,120 +758,121 @@ void letras(){
     cout<<"\t\t\t\t\t\t\t9]Young, wild and free  Snoop Dogg"<<endl;   cout<<"\t\t\t\t\t\t\t10]Rap God              Eminem"<<endl;
     
     cout<<endl; 
-    cout<<"\t\t\t\t\t\t\tEscoger una cancion que desee"<<endl; cin>>opcion2;
+    cout<<"\t\t\t\t\t\t\tEscoger una cancion que desee"; cin>>opcion2;
     switch(opcion2)
     {
       case 1:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=gLMo7_VXU_s"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=gLMo7_VXU_s"<<endl;
       }
       else{
-        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Till I Collapse   \nArtista:Eminem \nPublicacion:2002 \nDimension:7Mb \nGenero:Rap "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Till I Collapse   "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Eminem "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2002 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap "<<endl;
       }
       break;
       case 2:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=gb8Z7bTcLNo"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=gb8Z7bTcLNo"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:  21 Questions \nArtista:50 Cents\nPublicacion:2003 \nDimension:7.5Mb \nGenero:Rap "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:  21 Questions "<<endl;cout<<"\t\t\t\t\t\t\tArtista:50 Cents"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2003 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap "<<endl;
       }
       break;
       case 3:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl;cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=p9RtKPyAFZQ"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=p9RtKPyAFZQ"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Gangsta paradise \nArtista:Coolio \nPublicacion:2010 \nDimension:7.5Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Gangsta paradise "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Coolio "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2010 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
       }
       break;
       case 4:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl;cout<<"Escoger unas de las opciones:"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones:"; cin>>seleccion;
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=UeYQ49F3fnI"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=UeYQ49F3fnI"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Last breath \nArtista: Future \nPublicacion:2015 \nDimension:7.5Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Last breath "<<endl;cout<<"\t\t\t\t\t\t\tArtista: Future "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2015 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
       }
       break;
       case 5:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; 
-      cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; 
+      cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"<<endl; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=U7aFg4HBx5o"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=U7aFg4HBx5o"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Groupie Love  \nArtista:A$ap rocky  \nPublicacion:2016 \nDimension:6.5Mb \nGenero:Rap "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Groupie Love  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:A$ap rocky  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2016 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap "<<endl;
       }
       break;
       case 6:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=xUM7FqUMCy0"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=xUM7FqUMCy0"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:When i grow up  \nArtista:NF \nPublicacion:2019 \nDimension:7.5Mb \nGenero:Rap "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:When i grow up  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:NF "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap "<<endl;
       }
       break;
       case 7:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=QzuIvNOeb8A&has_verified=1"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=QzuIvNOeb8A&has_verified=1"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:HUMBLE    \nArtista:Kendrick Lamar   \nPublicacion:2018 \nDimension:6.5Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:HUMBLE    "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Kendrick Lamar   "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2018 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
       }
       break;
       case 8:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=fZsCg4mz364"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=fZsCg4mz364"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:See you agian \nArtista:Wiz Khalifa \nPublicacion:2017 \nDimension:6.8Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:See you agian "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Wiz Khalifa "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2017 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.8Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
       }
       break;
       case 9:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=J_r1ydhbN_g"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=J_r1ydhbN_g"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Young, wild and free \nArtista:Snoop Dog \nPublicacion:2017 \nDimension:7.5Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Young, wild and free "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Snoop Dog "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2017 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
       }
       break;
       case 10:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
         if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=OCFshtUqM9E"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=OCFshtUqM9E"<<endl;
         }
         else{
-        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Rap God  \nArtista:Eminem\nPublicacion:2013 \nDimension:9.5Mb \nGenero:Rap  "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Rap God  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Eminem"<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2013 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:9.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Rap  "<<endl;
         }
       break;
       default:
-      cout<<"Opcion no valida "<<endl;
+      cout<<endl<<endl;
+      cout<<"\t\t\t\t\t\t\tOpcion no valida "<<endl;
       break;
     }
   }
@@ -880,121 +884,122 @@ void letras(){
     cout<<"\t\t\t\t\t\t\t5]Uptown Funk            Mark Ronson"<<endl;   cout<<"\t\t\t\t\t\t\t6]Dance Monkey           Tones and I"<<endl;
     cout<<"\t\t\t\t\t\t\t7]Get Lucky              Daft Punk"<<endl;     cout<<"\t\t\t\t\t\t\t8]Wonder                 Shawn Mendes"<<endl;
     cout<<"\t\t\t\t\t\t\t9]How do you sleep       Sam Smith"<<endl;     cout<<"\t\t\t\t\t\t\t10]Hotline Bling         Drake"<<endl<<endl;
-    cout<<"Escoger una cancion que desee: "<<endl;
+    cout<<"Escoger una cancion que desee: ";
     cin>>opcion2;
     switch(opcion2)
     {
       case 1:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl;cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=Yim4--J44gk"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=Yim4--J44gk"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion: Counting Stars    \nArtista:One Republic \nPublicacion:2013 \nDimension:4.6Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion: Counting Stars    "<<endl;cout<<"\t\t\t\t\t\t\tArtista:One Republic "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2013 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:4.6Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 2:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=IlwIcTsmERw"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=IlwIcTsmERw"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Rude  \nArtista:MAGIC!  \nPublicacion:2014 \nDimension:5.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Rude  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:MAGIC!  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2014 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:5.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 3:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=6mUDEBjFgm4"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=6mUDEBjFgm4"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Angel of small     \nArtista:Hozie \nPublicacion:2014 \nDimension:7.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Angel of small     "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Hozie "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2014 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:7.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 4:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl;cout<<"Escoger unas de las opciones:"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl;cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones:"; cin>>seleccion;
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=H6R2WRYyI08"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=H6R2WRYyI08"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Congratulations  \nArtista: Post Malone \nPublicacion:2016 \nDimension:4.5Mb \nGenero:Pop"<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Congratulations  "<<endl;cout<<"\t\t\t\t\t\t\tArtista: Post Malone "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2016 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:4.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop"<<endl;
       }
       break;
       case 5:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; 
-      cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; 
+      cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=CeYuFSBkkVw"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=CeYuFSBkkVw"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Uptown Funk  \nArtista:Mark Ronson  \nPublicacion:2014 \nDimension:6.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Uptown Funk  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Mark Ronson  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2014 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 6:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
 
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=1__CAdTJ5JU"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=1__CAdTJ5JU"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion: Dance Monkey   \nArtista:Tones and I \nPublicacion:2019 \nDimension:6.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion: Dance Monkey   "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Tones and I "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 7:
-      cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+      cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
       
       if(seleccion==1){
-        cout<<"Indicaciones:\nDar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=5glDAaCaazc"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones:\nDar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=5glDAaCaazc"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Get Lucky \nArtista:Daft Punk \nPublicacion:2013 \nDimension:6.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Get Lucky "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Daft Punk "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2013 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 8:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=T09bJIU9JP0"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=T09bJIU9JP0"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:Wonder   \nArtista:Shawn Mendes  \nPublicacion:2015 \nDimension:6.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Wonder   "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Shawn Mendes  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2015 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 9:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
        
       if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=PmYypVozQb4"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=PmYypVozQb4"<<endl;
       }
       else{
-        cout<<"Nombre de la cancion:How do you sleep  \nArtista:Sam Smith  \nPublicacion:2019 \nDimension:6.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:How do you sleep  "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Sam Smith  "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2019 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:6.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
       }
       break;
       case 10:
-       cout<<"1.Letra de la cancion"<<endl; cout<<"2.Detalles de la cancion"<<endl; cout<<"Seleccione una de las opciones"<<endl; cin>>seleccion;
+       cout<<"\t\t\t\t\t\t\t1.Letra de la cancion"<<endl; cout<<"\t\t\t\t\t\t\t2.Detalles de la cancion"<<endl; cout<<"\t\t\t\t\t\t\tSeleccione una de las opciones"; cin>>seleccion;
         if(seleccion==1){
-        cout<<"Indicaciones dar CTRL + clic sobre el link para poder acceder."<<endl;
-        cout<<"https://www.youtube.com/watch?v=uJtaKS1ARoE"<<endl;
+        cout<<"\t\t\t\t\t\t\tIndicaciones dar CTRL + click sobre el link para poder acceder."<<endl;
+        cout<<"\t\t\t\t\t\t\thttps://www.youtube.com/watch?v=uJtaKS1ARoE"<<endl;
         }
         else{
-        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Hotline Bling         \nArtista:Drake \nPublicacion:2015 \nDimension:9.5Mb \nGenero:Pop "<<endl;
+        cout<<"\t\t\t\t\t\t\tNombre de la cancion:Hotline Bling         "<<endl;cout<<"\t\t\t\t\t\t\tArtista:Drake "<<endl;cout<<"\t\t\t\t\t\t\tPublicacion:2015 "<<endl;cout<<"\t\t\t\t\t\t\tDimension:9.5Mb "<<endl;cout<<"\t\t\t\t\t\t\tGenero:Pop "<<endl;
         }
       break;
       default:
-      cout<<"Opcion no valida "<<endl;
+      cout<<endl<<endl;
+      cout<<"\t\t\t\t\t\t\tOpcion no valida "<<endl;
       break;
     }
   } 
