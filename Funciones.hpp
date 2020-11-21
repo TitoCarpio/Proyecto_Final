@@ -462,6 +462,11 @@ void musica(queue * canciones){
     gener.push("regueton");
     push(canciones,"La Toxica", "Farruko","regueton");
     push(canciones,"Bellaquita", "Dalex","regueton");
+    push(regueton, "Con Calma","Daddy Yankee", "Regueton", 201);
+    push(regueton,"Caramelo", "Ozuna","Regueton",242);
+    push(regueton, "Dakiti","Bad Bunny","Regueton",204);
+    push(regueton,"Agua","J Balvin", "Regueton", 177);
+    push(regueton,"La curiosidad","Jay Wheeler","Regeueton", 208);
 
 
 
