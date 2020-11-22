@@ -30,6 +30,7 @@ struct Sesion{
 typedef struct Sesion registro;
 
 stack<string> gener;
+registro respaldo;
 
 // Inicializa mi cola.
 void initialize(queue *q) {
@@ -279,6 +280,26 @@ void terminosycondiciones( bool * terminos){
     }
 
 }
+void Login(bool &bandera){
+    registro nuevaSesion;
+    cout << "Iniciando otra vez sesion....." << endl;
+    cout << "Ingrese sus datos nuevamente" << endl;
+    cout << "Ingrese su nombre de usuario" << endl;
+    cin >> nuevaSesion.nombre;
+    cout << "Ingrese su correo electronico: " << endl;
+    cin >> nuevaSesion.correo;
+    cout << "Ingrese la contrasena" << endl;
+    cin >> nuevaSesion.contrasena;
+    
+    if(nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
+    bandera = false;
+  }else{
+    cout << "Credenciales incorrectas" << endl;
+  }
+}
+
+    
+    
 
 //menu de usurio.
 void menu(queue *canciones){
@@ -434,11 +455,18 @@ void menu(queue *canciones){
                 letras();
                 break;
             case 8:
-                status = false;
-                break;
+                do{
+                cout << "Realmente desea salir (s) o desea volver a iniciar sesion (n)?" << endl;
+                cin >> optionSalir;
+                if(optionSalir == 'n') Login(banderaLogin);
+                else {status= false; banderaLogin = false;}
+              }while(banderaLogin);
+              break;
             default:
                 cout<<"Opcion invalida, intente nuevamente."<<endl;               
                 break;
+                
+               
         }
     } 
 }
