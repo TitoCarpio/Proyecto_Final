@@ -255,7 +255,7 @@ void inicio (){
         cout << "\t\t\t\t\t\t\t**" << endl;
         cout<<endl<<endl;
 
-         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A UMUSIC++   Registrate!!"<<endl;
+         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A SPOTIFY ++   Registrate!!"<<endl;
 
     cout << "\t\t\t\t\t\t\t\t\tIngrese el nombre de usurio: ";
     getline(cin, respaldo.nombre);
@@ -274,10 +274,10 @@ void terminosycondiciones( bool * terminos){
 
     cout << "\t\t\t\t\t\t\t\t\tTERMINOS Y CONDICIONES DE USO"<<endl;
     cout<<endl;
-    cout << "\t\t\t\t\t\tEstos Terminos del Servicio reflejan la forma de trabajar de UMUSIC++ como empresa,"<<endl;
+    cout << "\t\t\t\t\t\tEstos Terminos del Servicio reflejan la forma de trabajar de Spotify++ como empresa,"<<endl;
     cout << "\t\t\t\t\t\tlas leyes por las que nos regimos y determinados aspectos que siempre hemos creido"<<endl;
     cout << "\t\t\t\t\t\tque son ciertos. Por ello, estos Terminos del Servicio ayudan a definir la relacion"<<endl;
-    cout << "\t\t\t\t\t\tque tiene UMUSIC++ contigo cuando interactuas con nuestros servicios. Por ejemplo,"<<endl;
+    cout << "\t\t\t\t\t\tque tiene Spotify++ contigo cuando interactuas con nuestros servicios. Por ejemplo,"<<endl;
     cout << "\t\t\t\t\t\testos terminos incluyen las siguientes secciones:"<<endl<<endl;
     cout << "\t\t\t\t\t\tSeguir leyendo ...."<<endl<<endl;
     cout << "\t\t\t\t\t\t\t\tACEPTAR=1\t\t\t\t\tRECHAZAR=2"<<endl<<endl<<endl;
@@ -410,7 +410,7 @@ void menu(queue *canciones, bool *seguir){
                         eliminarCola(optionCola);
                     }
                 }else{
-                    cout<<"Opcion Invalida, vuelva a intentarlo"<<endl;
+                    cout << "\t\t\t\t\t\tOpcion Invalida, vuelva a intentarlo"<<endl;
                 }
                 break;
             case 2:
@@ -423,7 +423,7 @@ void menu(queue *canciones, bool *seguir){
                     if (optionCola>=1 && optionCola<maximo){
                         AgregarCancion(optionCola, canciones);
                     }else{
-                        cout<<"Opcion incorrecta, intente de nuevo"<<endl;
+                        cout << "\t\t\t\t\t\tOpcion incorrecta, intente de nuevo"<<endl;
                     }
                 break;
 
@@ -438,7 +438,7 @@ void menu(queue *canciones, bool *seguir){
                     EliminarCancion(optionCola, canciones);
                 }else
                 {
-                    cout<<"Opcion invalida, intente de nuevo"<<endl;
+                    cout << "\t\t\t\t\t\tOpcion invalida, intente de nuevo"<<endl;
                 }
                 
                 break;
@@ -459,7 +459,7 @@ void menu(queue *canciones, bool *seguir){
                     string g = Aux.top();
                     eliminar(canciones, g);
                 }else{
-                    cout<<"Opcion invalida intente de nuevo"<<endl;
+                    cout << "\t\t\t\t\t\tOpcion invalida intente de nuevo"<<endl;
                 }
                 
                 break;
@@ -478,7 +478,7 @@ void menu(queue *canciones, bool *seguir){
                     string g = aux.top();
                     showQueue(canciones, g);
                 }else{
-                    cout<<"Opcion invalida intente de nuevo"<<endl;
+                    cout << "\t\t\t\t\t\tOpcion invalida intente de nuevo"<<endl;
                 }
                 break;
             case 6:
@@ -593,11 +593,11 @@ void menu(queue *canciones, bool *seguir){
                   Login(banderaLogin);
                 }else if(optionSalir == 3){ // cierra todo hasta el valor de continuar con el programa en el main
                   status = false; banderaLogin = false; *seguir = false;
-                }else{ cout <<"Opcion Erronea!, intento nuevamente."<<endl;}
+                }else{ cout << "\t\t\t\t\t\tOpcion Erronea!, intento nuevamente."<<endl;}
               }while(banderaLogin);
               break;
             default:
-                cout<<"Opcion invalida, intente nuevamente."<<endl;               
+                cout << "\t\t\t\t\t\tOpcion invalida, intente nuevamente."<<endl;               
                 break;
         }
     } 
@@ -1164,4 +1164,3 @@ void letras(){
     }
   } 
 }
-
