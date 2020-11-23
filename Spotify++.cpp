@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 int main(){
     queue canciones;
     registro sesion;
