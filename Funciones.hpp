@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <stack>
+#include <list>
 
 using namespace std;
 
@@ -492,7 +493,6 @@ void menu(queue *canciones, bool *seguir){
                 }else if(optionSalir == 3){ // cierra todo hasta el valor de continuar con el programa en el main
                   status = false; banderaLogin = false; *seguir = false;
                 }else{ cout <<"Opcion Erronea!, intento nuevamente."<<endl;}
-
               }while(banderaLogin);
               break;
             default:
