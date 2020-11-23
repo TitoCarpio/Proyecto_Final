@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <vector>
 #include <stack>
 #include <list>
 
@@ -139,6 +140,7 @@ void eliminar(queue *s, string g){
 //Variables globales
 int seleccion=0;
 int opcion2=0;
+vector<Node> descargas;
 //Funciones extras
 void letras();
 
@@ -212,6 +214,24 @@ void eliminarCola(int opcion){
         aux.pop();
     }
     cout <<"\t\t\t\t\t\t\tCola eliminada con exito..."<<endl;
+}
+
+void elimirelementVector(){
+  string unNombre;
+  cout <<"\t\t\t\t\t\t\tNombre de la cancion a eliminar:";
+  getline(cin, unNombre);
+
+  for (auto iter  = descargas.begin() ; iter != descargas.end(); iter++)
+  {
+    if (iter->titulo == unNombre)
+    {
+      iter= descargas.erase(iter);
+      cout <<"\t\t\t\t\t\t\tCancion eliminada correctamente"<<endl;
+      break;
+    }
+    
+  }
+  
 }
 
 //solicitud de datos del usuario para inicio de sesion
@@ -327,10 +347,10 @@ void Login(bool &bandera){
 //menu de usurio.
 void menu(queue *canciones, bool *seguir){
 
+     node cancionesaDescargar;
     string titulo,cantante, genero;
-    int optionMenu=0, optionCola=0, duracion=0, maximo=0, optionSalir=0;
-    bool status = true, banderaLogin = true;
-    node *newFeliz;
+    int optionMenu=0, optionCola=0, duracion=0, maximo=0,optionSalir;
+    bool status = true, banderaLogin = true,status1 = true;
 
         cout << endl << endl << endl;
         cout << "\t\t\t\t\t\t\t**" << endl;
@@ -462,18 +482,99 @@ void menu(queue *canciones, bool *seguir){
                 }
                 break;
             case 6:
+                int opcion;
+                
                 cout<<"\t\t\t\t\t\t\tIngrese los datos de la cancion a descargar: "<<endl;
                 cout<<"\t\t\t\t\t\t\tTitulo: ";
-                getline(cin,titulo);
+                getline(cin,cancionesaDescargar.titulo);
                         
                 cout<<"\t\t\t\t\t\t\tCantante: ";
-                getline(cin,cantante);
+                getline(cin,cancionesaDescargar.cantante);
 
                 cout<<"\t\t\t\t\t\t\tGenero: ";
-                getline(cin, genero );
+                getline(cin, cancionesaDescargar.genero );
+                descargas.push_back(cancionesaDescargar);
 
-                push(canciones,titulo,cantante,genero);
+                while (status1)
+                {
+                  cout<<endl;
+                  cout<<"\t\t\t\t\t\t\t1.Visualizar lalista de descargas"<<endl;
+                  cout<<"\t\t\t\t\t\t\t2.Eliminar una cancion de la lista de descarga"<<endl;
+                  cout<<"\t\t\t\t\t\t\t3.Eliminar todas las descargas."<<endl;
+                  cout<<"\t\t\t\t\t\t\t4.Volver al menu de principal."<<endl<<endl;
+                  cout<<"\t\t\t\t\t\t\tIngrese la opcion a elegir:";
+                  cin>>opcion;
+                  cin.ignore();
+
+                  switch (opcion)
+                  {
+                  case 1:
+                    for (int i = 0; i < descargas.size(); i++)
+                    {
+                      cout<<endl;
+                      cout<<"\t\t\t\t\t\t\t\t\t\tCancion "<<i+1<<endl;
+                      cout<<"\t\t\t\t\t\t\tTitulo: "<<descargas[i].titulo<<endl;
+                      cout<<"\t\t\t\t\t\t\tCantante: "<<descargas[i].cantante<<endl;
+                      cout<<"\t\t\t\t\t\t\tGenero: "<<descargas[i].genero<<endl;
+                      cout<<endl;
+                    }
+
+                    break;
+
+                  case 2:
+                    int opcion;
+                    for (int i = 0; i < descargas.size(); i++)
+                    {
+                      cout<<endl;
+                      cout<<"\t\t\t\t\t\t\t\t\t\tCancion "<<i+1<<endl;
+                      cout<<"\t\t\t\t\t\t\tTitulo: "<<descargas[i].titulo<<endl;
+                      cout<<"\t\t\t\t\t\t\tCantante: "<<descargas[i].cantante<<endl;
+                      cout<<"\t\t\t\t\t\t\tGenero: "<<descargas[i].genero<<endl;
+
+                      cout<<endl;
+                    }
+                    cout<<endl;
+                    cout<<"\t\t\t\t\t\t\tIngrese el numero de la cancion a eliminar:";
+                    cin>>opcion;
+                    cin.ignore();
+
+                    if (opcion >= 0 && opcion<= descargas.size())
+                    {
+                      elimirelementVector();
+
+
+                    }else
+                    {
+                      cout<<"\t\t\t\t\t\t\tLa cancion "<<opcion<<" no existe,"<<endl;
+                    }
+                
+                  
+                    
+                    break;
+                  
+                  case 3:
+                    cout<<"\t\t\t\t\t\t\tEliminando todas las descargas......"<<endl;
+                    descargas.clear();
+
+                    break;
+
+
+                  case 4:
+                  cout<<"\t\t\t\t\t\t\tVolviendo al menu principal..."<<endl;
+                  status1 = false;
+                
+
+                  break;
+                  default:
+                  cout<<"\t\t\t\t\t\t\tLa opcion no es valida, intente nuevamente"<<endl;
+                    break;
+                  }
+  
+                }
+                status1 = true;
+
                 break;
+                
             case  7:
                 letras();
                 break;
