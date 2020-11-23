@@ -33,6 +33,7 @@ typedef struct Sesion registro;
 stack<string> gener; // Pila que se usa para buscar las colas segun genero
 list<registro> cuentas; // lista doblemente enlazada que guarda todas las cuentas de users
 
+
 // Inicializa mi cola.
 void initialize(queue *q) {
     q->front = NULL;
@@ -244,7 +245,7 @@ void inicio (){
     getline( cin, respaldo.contrasena);
     cout<<endl<<endl;
 
-    cuentas.push_back(respaldo); // Se guarda las credenciales en la lista
+    cuentas.push_back(respaldo);
 }
 
 //solicitud para aceptar terminos y condiciones del reproductor
@@ -283,7 +284,7 @@ void terminosycondiciones( bool * terminos){
 
 }
 
-bool buscar(registro cuenta){ // Busca en la lista las cuentas guardadas y las compara con la cuenta que se pide
+bool buscar(registro cuenta){
   bool encontrado = false;
   if(!cuentas.empty()){
 
@@ -327,8 +328,7 @@ void Login(bool &bandera){
 void menu(queue *canciones, bool *seguir){
 
     string titulo,cantante, genero;
-    int optionMenu=0, optionCola=0, duracion=0, maximo=0;
-    char optionSalir;
+    int optionMenu=0, optionCola=0, duracion=0, maximo=0, optionSalir=0;
     bool status = true, banderaLogin = true;
     node *newFeliz;
 
