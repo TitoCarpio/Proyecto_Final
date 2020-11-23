@@ -30,6 +30,7 @@ struct Sesion{
 typedef struct Sesion registro;
 
 stack<string> gener;
+
 registro respaldo;
 
 // Inicializa mi cola.
@@ -237,10 +238,13 @@ void inicio (registro *sesion){
 
     cout << "\t\t\t\t\t\t\t\t\tIngrese el nombre de usurio: ";
     getline(cin, sesion->nombre);
+    respaldo.nombre = sesion->nombre;
     cout << "\t\t\t\t\t\t\t\t\tCorreo electronico: ";
     getline( cin, sesion->correo);
+    respaldo.correo = sesion->correo;
     cout << "\t\t\t\t\t\t\t\t\tContrasena: ";
     getline( cin, sesion->contrasena);
+    respaldo.contrasena = sesion->contrasena;
     cout<<endl<<endl;
     
 }
@@ -280,33 +284,32 @@ void terminosycondiciones( bool * terminos){
     }
 
 }
+
 void Login(bool &bandera){
-    registro nuevaSesion;
-    cout << "Iniciando otra vez sesion....." << endl;
-    cout << "Ingrese sus datos nuevamente" << endl;
-    cout << "Ingrese su nombre de usuario" << endl;
-    cin >> nuevaSesion.nombre;
-    cout << "Ingrese su correo electronico: " << endl;
-    cin >> nuevaSesion.correo;
-    cout << "Ingrese la contrasena" << endl;
-    cin >> nuevaSesion.contrasena;
-    
-    if(nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
+  registro nuevaSesion;
+  cout << "Iniciando otra vez sesion…….." << endl;
+  cout << "Ingrese sus datos nuevamente" << endl;
+  cout << "Ingrese su nombre de usuario: " << endl;
+  cin >> nuevaSesion.nombre;
+  cout << "Ingrese su correo electronico: " << endl;
+  cin >> nuevaSesion.correo;
+  cout << "Ingrese la contrasena: " << endl;
+  cin >> nuevaSesion.contrasena;
+
+  if(nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
     bandera = false;
   }else{
     cout << "Credenciales incorrectas" << endl;
   }
 }
 
-    
-    
-
 //menu de usurio.
 void menu(queue *canciones){
 
     string titulo,cantante, genero;
     int optionMenu=0, optionCola=0, duracion=0, maximo=0;
-    bool status = true;
+    char optionSalir;
+    bool status = true, banderaLogin = true;
     node *newFeliz;
 
         cout << endl << endl << endl;
@@ -455,7 +458,7 @@ void menu(queue *canciones){
                 letras();
                 break;
             case 8:
-                do{
+              do{
                 cout << "Realmente desea salir (s) o desea volver a iniciar sesion (n)?" << endl;
                 cin >> optionSalir;
                 if(optionSalir == 'n') Login(banderaLogin);
@@ -465,8 +468,6 @@ void menu(queue *canciones){
             default:
                 cout<<"Opcion invalida, intente nuevamente."<<endl;               
                 break;
-                
-               
         }
     } 
 }
@@ -1031,4 +1032,3 @@ void letras(){
       break;
     }
   } 
-}
