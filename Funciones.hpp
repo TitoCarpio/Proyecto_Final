@@ -287,19 +287,20 @@ void terminosycondiciones( bool * terminos){
 
 void Login(bool &bandera){
   registro nuevaSesion;
-  cout << "Iniciando otra vez sesion…….." << endl;
-  cout << "Ingrese sus datos nuevamente" << endl;
-  cout << "Ingrese su nombre de usuario: " << endl;
+  cout << "\t\t\t\t\t\t\tIniciando otra vez sesion…….." << endl;
+  cout << "\t\t\t\t\t\t\tIngrese sus datos nuevamente" << endl;
+  cout << "\t\t\t\t\t\t\tIngrese su nombre de usuario: ";
   cin >> nuevaSesion.nombre;
-  cout << "Ingrese su correo electronico: " << endl;
+  cout << "\t\t\t\t\t\t\tIngrese su correo electronico: ";
   cin >> nuevaSesion.correo;
-  cout << "Ingrese la contrasena: " << endl;
+  cout << "\t\t\t\t\t\t\tIngrese la contrasena: " ;
   cin >> nuevaSesion.contrasena;
+  cout<<endl<<endl;
 
   if(nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
     bandera = false;
   }else{
-    cout << "Credenciales incorrectas" << endl;
+    cout << "\t\t\t\t\t\t\tCredenciales incorrectas" << endl;
   }
 }
 
@@ -459,7 +460,9 @@ void menu(queue *canciones){
                 break;
             case 8:
               do{
-                cout << "Realmente desea salir (s) o desea volver a iniciar sesion (n)?" << endl;
+                cout<<endl;
+                cout << "\t\t\t\t\t\t\tRealmente desea salir (s) o desea volver a iniciar sesion (n)?" << endl;
+                cout << "\t\t\t\t\t\t\tIngrese la opcion a elegir:";
                 cin >> optionSalir;
                 if(optionSalir == 'n') Login(banderaLogin);
                 else {status= false; banderaLogin = false;}
