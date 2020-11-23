@@ -29,9 +29,8 @@ struct Sesion{
 };
 typedef struct Sesion registro;
 
-stack<string> gener;
-
-registro respaldo;
+stack<string> gener; // Pila que se usa para buscar las colas segun genero
+list<registro> cuentas; // lista doblemente enlazada que guarda todas las cuentas de users
 
 // Inicializa mi cola.
 void initialize(queue *q) {
@@ -214,8 +213,8 @@ void eliminarCola(int opcion){
 }
 
 //solicitud de datos del usuario para inicio de sesion
-void inicio (registro *sesion){
-    
+void inicio (){
+    registro respaldo;
      cout << endl << endl << endl;
         cout << "\t\t\t\t\t\t\t**" << endl;
         cout << "\t\t\t\t\t\t\t*****" << endl;
@@ -234,19 +233,17 @@ void inicio (registro *sesion){
         cout << "\t\t\t\t\t\t\t**" << endl;
         cout<<endl<<endl;
 
-         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A SPOTIFY ++"<<endl;
+         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A SPOTIFY ++   Registrate!!"<<endl;
 
     cout << "\t\t\t\t\t\t\t\t\tIngrese el nombre de usurio: ";
-    getline(cin, sesion->nombre);
-    respaldo.nombre = sesion->nombre;
+    getline(cin, respaldo.nombre);
     cout << "\t\t\t\t\t\t\t\t\tCorreo electronico: ";
-    getline( cin, sesion->correo);
-    respaldo.correo = sesion->correo;
+    getline( cin, respaldo.correo);
     cout << "\t\t\t\t\t\t\t\t\tContrasena: ";
-    getline( cin, sesion->contrasena);
-    respaldo.contrasena = sesion->contrasena;
+    getline( cin, respaldo.contrasena);
     cout<<endl<<endl;
-    
+
+    cuentas.push_back(respaldo); // Se guarda las credenciales en la lista
 }
 
 //solicitud para aceptar terminos y condiciones del reproductor
@@ -285,27 +282,48 @@ void terminosycondiciones( bool * terminos){
 
 }
 
+bool buscar(registro cuenta){ // Busca en la lista las cuentas guardadas y las compara con la cuenta que se pide
+  bool encontrado = false;
+  if(!cuentas.empty()){
+
+    for(auto iter = cuentas.begin(); iter != cuentas.end(); ++iter){
+      if(iter->nombre == cuenta.nombre && iter->contrasena == cuenta.contrasena){
+        cout << "\n\n";
+        cout << "\t\t\t\t\t\t\tVEN A DISFRUTAR TU MUSICA, BIENVENIDO " << iter->nombre << "!!!!!\n";
+        encontrado = true;
+        return encontrado;
+      }
+    }
+    if(encontrado == false){
+      cout << "\t\t\t\t\t\t\tNo encontrado. Credenciales Inconrrectas!!\n";
+      return encontrado;
+    }
+  }else{
+    cout << "\t\t\t\t\t\t\tAun No hay cuentas guardadas\n";
+  }
+  
+  
+}
+
 void Login(bool &bandera){
   registro nuevaSesion;
-  cout << "\t\t\t\t\t\t\tIniciando otra vez sesion…….." << endl;
+  system("cls");
+  cout << "\t\t\t\t\t\t\tIniciando otra vez sesion........" << endl;
   cout << "\t\t\t\t\t\t\tIngrese sus datos nuevamente" << endl;
   cout << "\t\t\t\t\t\t\tIngrese su nombre de usuario: ";
   cin >> nuevaSesion.nombre;
-  cout << "\t\t\t\t\t\t\tIngrese su correo electronico: ";
-  cin >> nuevaSesion.correo;
   cout << "\t\t\t\t\t\t\tIngrese la contrasena: " ;
   cin >> nuevaSesion.contrasena;
-  cout<<endl<<endl;
 
-  if(nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
+  if( buscar(nuevaSesion) ){ //nuevaSesion.nombre == respaldo.nombre && nuevaSesion.correo == respaldo.correo && nuevaSesion.contrasena == respaldo.contrasena){
     bandera = false;
   }else{
-    cout << "\t\t\t\t\t\t\tCredenciales incorrectas" << endl;
+    cout << "\t\t\t\t\t\t\tIntente nuevamente"<< endl;
   }
 }
 
 //menu de usurio.
-void menu(queue *canciones){
+void menu(queue *canciones, bool *seguir){
 
     string titulo,cantante, genero;
     int optionMenu=0, optionCola=0, duracion=0, maximo=0;
@@ -461,11 +479,20 @@ void menu(queue *canciones){
             case 8:
               do{
                 cout<<endl;
-                cout << "\t\t\t\t\t\t\tRealmente desea salir (s) o desea volver a iniciar sesion (n)?" << endl;
-                cout << "\t\t\t\t\t\t\tIngrese la opcion a elegir:";
-                cin >> optionSalir;
-                if(optionSalir == 'n') Login(banderaLogin);
-                else {status= false; banderaLogin = false;}
+                cout << "\t\t\t\t\t\t\t1. Cerrar sesion.    2. iniciar otra sesion." << endl;
+                cout << "\t\t\t\t\t\t\t3. Salir del programa\n";
+                cout << "\t\t\t\t\t\t\tIngrese la opcion a elegir: ";
+                cin >> optionSalir; 
+                cin.ignore();
+                if(optionSalir == 1){ // solo cierra el menu y regresa a main 
+                  system("cls");
+                  status= false; banderaLogin = false;
+                }else if(optionSalir == 2){ // solo cierra este do while
+                  Login(banderaLogin);
+                }else if(optionSalir == 3){ // cierra todo hasta el valor de continuar con el programa en el main
+                  status = false; banderaLogin = false; *seguir = false;
+                }else{ cout <<"Opcion Erronea!, intento nuevamente."<<endl;}
+
               }while(banderaLogin);
               break;
             default:
