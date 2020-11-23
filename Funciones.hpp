@@ -255,7 +255,7 @@ void inicio (){
         cout << "\t\t\t\t\t\t\t**" << endl;
         cout<<endl<<endl;
 
-         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A SPOTIFY ++   Registrate!!"<<endl;
+         cout << "\t\t\t\t\t\t\t\t\tBIENIDO A UMUSIC++   Registrate!!"<<endl;
 
     cout << "\t\t\t\t\t\t\t\t\tIngrese el nombre de usurio: ";
     getline(cin, respaldo.nombre);
@@ -274,10 +274,10 @@ void terminosycondiciones( bool * terminos){
 
     cout << "\t\t\t\t\t\t\t\t\tTERMINOS Y CONDICIONES DE USO"<<endl;
     cout<<endl;
-    cout << "\t\t\t\t\t\tEstos Terminos del Servicio reflejan la forma de trabajar de Spotify++ como empresa,"<<endl;
+    cout << "\t\t\t\t\t\tEstos Terminos del Servicio reflejan la forma de trabajar de UMUSIC++ como empresa,"<<endl;
     cout << "\t\t\t\t\t\tlas leyes por las que nos regimos y determinados aspectos que siempre hemos creido"<<endl;
     cout << "\t\t\t\t\t\tque son ciertos. Por ello, estos Terminos del Servicio ayudan a definir la relacion"<<endl;
-    cout << "\t\t\t\t\t\tque tiene Spotify++ contigo cuando interactuas con nuestros servicios. Por ejemplo,"<<endl;
+    cout << "\t\t\t\t\t\tque tiene UMUSIC++ contigo cuando interactuas con nuestros servicios. Por ejemplo,"<<endl;
     cout << "\t\t\t\t\t\testos terminos incluyen las siguientes secciones:"<<endl<<endl;
     cout << "\t\t\t\t\t\tSeguir leyendo ...."<<endl<<endl;
     cout << "\t\t\t\t\t\t\t\tACEPTAR=1\t\t\t\t\tRECHAZAR=2"<<endl<<endl<<endl;
