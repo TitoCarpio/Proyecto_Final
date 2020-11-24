@@ -2,15 +2,15 @@ UMUSIC++
 
 Equipo de desarrollo:
 
-  - Tito Erick Carpio Guerra          -->     00226620
+  - Tito Erick Carpio Guerra                      -->         00226620
   
-  - Jonathan Ariel Cabrera Galdámez   -->     00003120
+  - Jonathan Ariel Cabrera Galdámez               -->         00003120
   
-  - Kenneth Alexander Pérez Pérez     -->     00155920
+  - Kenneth Alexander Pérez Pérez                 -->         00155920
   
-  - Oswaldo Enrique Guevara Berríos   -->     00222320
+  - Oswaldo Enrique Guevara Berríos               -->         00222320
   
-  - Kevin Bryan Hernández López       -->     00057720
+  - Kevin Bryan Hernández López                   -->         00057720
   
 Se realizo un reproductor de música que busca satisfacer las necesidades del usurario al contar con todas las herramientas necesarias
 para disfrutar de la mejor manera la experiencia del mundo musical en la palma de las manos.
