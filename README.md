@@ -12,6 +12,7 @@ Equipo de desarrollo:
   
   - Kevin Bryan Hernández López                   -->         00057720
   
+  
 Se realizo un reproductor de música que busca satisfacer las necesidades del usurario al contar con todas las herramientas necesarias para disfrutar de la mejor manera la experiencia del mundo musical en la palma de las manos. Este reproductor cuenta con una amplia variedad de música ordenada en la biblioteca por géneros musicales, donde se podrá elegir y crear las lista que se deseen. Con la ventaja de agregar nuevas canciones a tus listas de canciones favoritas sin NINGÚN LIMITE. Si además deseas visualizar sugerencias de nuevas canciones con su letra, contamos con la opción de conocer detalles de la canción y visualizar su video mediante You Tube.
 
 Un extra que nos hace únicos es la oportunidad de seguir viviendo la experiencia musical sin necesidad de conexión a Internet, con la opción de descarga; donde solo tienes que buscar la canción que deseas sin costo alguno.
